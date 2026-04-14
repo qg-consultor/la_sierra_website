@@ -1,0 +1,33 @@
+HTTP/1.1 302 Found
+Content-Type: application/binary
+Vary: Sec-Fetch-Dest, Sec-Fetch-Mode, Sec-Fetch-Site
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: Mon, 01 Jan 1990 00:00:00 GMT
+Date: Tue, 07 Apr 2026 15:39:11 GMT
+Location: https://www.google.com/maps/place/La+Sierra+Residencial/@20.660156,-100.3446953,17z/data=!3m1!4b1!4m6!3m5!1s0x85d35d68f9b5f1a3:0xe651cd1e98e0d7c3!8m2!3d20.660156!4d-100.3446953!16s%2Fg%2F11h7r8m858?entry=tts&g_ep=EgoyMDI2MDQwNS4wIPu8ASoASAFQAw%3D%3D&skid=128b4903-1d19-4de8-9ce6-9ab6a2eb6217
+Content-Length: 0
+Cross-Origin-Resource-Policy: same-site
+Accept-CH: Sec-CH-UA-Arch, Sec-CH-UA-Bitness, Sec-CH-UA-Full-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Model, Sec-CH-UA-WoW64, Sec-CH-UA-Form-Factors, Sec-CH-UA-Platform, Sec-CH-UA-Platform-Version
+Cross-Origin-Opener-Policy: unsafe-none
+Permissions-Policy: ch-ua-arch=*, ch-ua-bitness=*, ch-ua-full-version=*, ch-ua-full-version-list=*, ch-ua-model=*, ch-ua-wow64=*, ch-ua-form-factors=*, ch-ua-platform=*, ch-ua-platform-version=*
+Content-Security-Policy: script-src 'nonce-h3tiTj3pP305lAesvMUB8Q' 'unsafe-inline';object-src 'none';base-uri 'self';report-uri /_/DurableDeepLinkUi/cspreport;worker-src 'self'
+Content-Security-Policy: require-trusted-types-for 'script';report-uri /_/DurableDeepLinkUi/cspreport
+Server: ESF
+X-XSS-Protection: 0
+X-Frame-Options: SAMEORIGIN
+X-Content-Type-Options: nosniff
+
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=ISO-8859-1
+Content-Security-Policy-Report-Only: object-src 'none';base-uri 'self';script-src 'nonce-d2LLmHkM1O8Y7VCWtuH-2Q' 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https: http:;report-uri https://csp.withgoogle.com/csp/gws/maps-tactile
+P3P: CP="This is not a P3P policy! See g.co/p3phelp for more info."
+Date: Tue, 07 Apr 2026 15:39:11 GMT
+Server: gws
+X-XSS-Protection: 0
+X-Frame-Options: SAMEORIGIN
+Transfer-Encoding: chunked
+Expires: Tue, 07 Apr 2026 15:39:11 GMT
+Cache-Control: private
+Set-Cookie: NID=530=S7aWC1OlRIKBLil4BFq0qewbwmKiW6dT11Gndm-V5oMkTyXyovlyFSMkMuma3StFpn4SHKnczQe1w3C-EM8gt2itOnV0fyoGX6ysdu4dxm_cAguGcAf6KnOAqxOOg-HNHdv2v0bEL4HWE_d8OAcY8NwsSepYMKxAGoWloXANPBRvWGm8j2fmzLRT69v1d2V2hSMDC3aquTQXIgRa247-3tqV52qZoA; expires=Wed, 07-Oct-2026 15:39:11 GMT; path=/; domain=.google.com; HttpOnly
+
