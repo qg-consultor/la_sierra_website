@@ -1,4 +1,4 @@
-﻿$(document).ready(function() {
+$(document).ready(function() {
     
     // 1. Water Ripple Effect Disabled
     // Disabled intentionally: it causes a solid-color glitch (WebGL failure) when running the site from local file:/// paths.
@@ -242,13 +242,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (lightbox && fpCards.length > 0) {
         const fpData = [
-            { title: 'CASA <span class="text-green">TIPO 1</span>', src: 'IMAGENES/lasierra_residencial_casatipo1.png' },
-            { title: 'CASA <span class="text-green">TIPO 2</span>', src: 'IMAGENES/lasierra_residencial_casatipo2.png' },
-            { title: 'CASA <span class="text-green">TIPO 3</span>', src: 'IMAGENES/lasierra_residencial_casatipo3.png' },
-            { title: 'CASA <span class="text-green">TIPO 4</span>', src: 'IMAGENES/lasierra_residencial_casatipo4.jpg' },
-            { title: 'DEPA <span class="text-green">TIPO 1</span>', src: 'IMAGENES/lasierra_residencial_depatipo1.png' },
-            { title: 'DEPA <span class="text-green">TIPO 2</span>', src: 'IMAGENES/lasierra_residencial_depatipo2.png' },
-            { title: 'DEPA <span class="text-green">TIPO 3</span>', src: 'IMAGENES/lasierra_residencial_depatipo3.png' }
+            { title: 'CASA <span class="text-green">TIPO 1</span>', src: 'SECCIONES/PROTOTIPOS/GALERIA DE PLANOS/lasierra_residencial_casatipo1.png' },
+            { title: 'CASA <span class="text-green">TIPO 2</span>', src: 'SECCIONES/PROTOTIPOS/GALERIA DE PLANOS/lasierra_residencial_casatipo2.png' },
+            { title: 'CASA <span class="text-green">TIPO 3</span>', src: 'SECCIONES/PROTOTIPOS/GALERIA DE PLANOS/lasierra_residencial_casatipo3.png' },
+            { title: 'CASA <span class="text-green">TIPO 4</span>', src: 'SECCIONES/PROTOTIPOS/GALERIA DE PLANOS/lasierra_residencial_casatipo4.jpg' },
+            { title: 'DEPA <span class="text-green">TIPO 1</span>', src: 'SECCIONES/PROTOTIPOS/GALERIA DE PLANOS/lasierra_residencial_depatipo1.png' },
+            { title: 'DEPA <span class="text-green">TIPO 2</span>', src: 'SECCIONES/PROTOTIPOS/GALERIA DE PLANOS/lasierra_residencial_depatipo2.png' },
+            { title: 'DEPA <span class="text-green">TIPO 3</span>', src: 'SECCIONES/PROTOTIPOS/GALERIA DE PLANOS/lasierra_residencial_depatipo3.png' }
         ];
 
         let currentLbIndex = 0;
