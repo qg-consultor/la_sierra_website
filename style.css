@@ -49,7 +49,7 @@ button {
     height: 100vh;
     min-height: 800px;
     overflow: hidden;
-    background-color: #000;
+    background-color: #fdfbf7; /* Tono crema neutro para evitar flash negro */
     display: flex;
     flex-direction: column;
 }
