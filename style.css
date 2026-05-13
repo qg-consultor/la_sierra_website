@@ -49,131 +49,163 @@ button {
     height: 100vh;
     min-height: 800px;
     overflow: hidden;
-    /* The ripples library will use this background image */
-    background-image: url('SECCIONES/HERO/IMAGENES/La Sierra (3).png');
-    background-size: cover;
-    background-position: center bottom;
-    /* Removido background-attachment: fixed; para evitar que la imagen se vea "muy extendida" en ciertas pantallas */
+    background-color: #000;
     display: flex;
     flex-direction: column;
 }
 
-/* (The sunset timelapse overlay has been removed per user request) */
-/* ========================================================
-   Navigation
-   ======================================================== */
-.glass-navbar {
-    position: fixed; /* Mantiene el menú arriba al hacer scroll */
+.hero-bg-video {
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100%; 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 5%; /* Thinner padding */
-    background: rgba(7, 7, 7, 0.15); /* Softer glass but darker to contrast nav buttons */
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Border on bottom only */
-    z-index: 1000; /* Ensure on top */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
 }
 
-.nav-links {
+/* ========================================================
+   Navigation Sidebar
+   ======================================================== */
+.hero-sidebar {
+    position: absolute; /* Exclusivo sobre el hero */
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 205px;
     display: flex;
-    gap: 40px; /* Wider gap as per reference */
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start; /* Control total con márgenes */
+    align-items: flex-start;
+    padding: 60px 25px 140px 20px; /* Reducido padding izquierdo a 20px */
+    background: rgba(255, 255, 255, 0.8); /* Transparencia al 80% */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 10px 0px 40px rgba(0, 0, 0, 0.03);
+    z-index: 4; /* Detrás del degradado y de las siguientes secciones */
+    color: var(--text-dark);
+    transition: var(--transition);
 }
 
-.nav-links a {
-    font-weight: 500; 
-    font-size: 14px; 
+.nav-logo {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 0; 
+    padding-left: 5px; /* Alineación con los links */
+}
+
+.header-logo {
+    width: 100%;
+    height: auto;
+    max-width: 90px; 
+    /* Filtro para color gris oscuro suave (#333333) */
+    filter: brightness(0) saturate(100%) invert(20%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(95%) contrast(90%);
+}
+
+.hero-sidebar .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaciado más compacto entre elementos */
+    align-items: flex-start;
+    width: 100%;
+    padding-top: 110px; /* Ajustado a 110px solicitado */
+}
+
+.hero-sidebar .nav-links a {
+    width: 100%; /* Ocupa el ancho disponible */
+    font-weight: 700; 
+    font-size: 15px; 
     letter-spacing: 2px; 
     text-transform: uppercase;
     transition: var(--transition);
-    position: relative;
-    /* Convertidos a botones formato Pildora (Pill) */
-    padding: 8px 18px;
-    border-radius: 40px;
-    background: rgba(255, 255, 255, 0.03); /* Glassmorphism muy suave */
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.nav-links a::after {
-    display: none; /* Quitamos la linea inferior para favorecer el formato pill */
-}
-
-/* Efecto hover: Resaltar opcion con fondo blanco y texto oscuro */
-.nav-links a:hover {
-    background: rgba(255, 255, 255, 0.95); 
+    padding: 12px 15px; /* Reducido padding izquierdo de 20px a 15px */
+    background: transparent;
+    border: none;
     color: var(--text-dark);
-    font-weight: 600;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transform: translateY(-2px);
+    display: block;
+    opacity: 0.8;
+    border-radius: 12px; /* Bordes redondeados como la imagen */
 }
 
-.nav-actions {
+.hero-sidebar .nav-links a:hover {
+    background: #7F9B4F; /* Color corporativo solicitado */
+    color: #FFFFFF !important; /* Texto blanco */
+    opacity: 1;
+    transform: translateX(8px); /* Restaurado desplazamiento lateral */
+}
+
+.hero-sidebar .nav-actions {
+    margin-top: auto;
     display: flex;
-    align-items: center;
-    gap: 25px;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
 }
 
-.social-icons {
+.hero-sidebar .social-icons {
     display: flex;
-    gap: 15px;
+    gap: 12px;
+    width: 92px; /* Ancho total solicitado */
+    height: 40px; /* Alto solicitado */
 }
 
-.social-icons a {
-    width: 40px;
+.hero-sidebar .social-icons a {
+    width: 40px; /* Ajustado para encajar en los 92px totales */
     height: 40px;
     border-radius: 50%;
-    border: 1px solid var(--glass-border);
+    background: #efefef;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: var(--transition);
-}
-
-.social-icons a i {
-    font-size: 16px;
-    font-weight: 300; /* Minimal line style */
-}
-
-.social-icons a:hover {
-    background: var(--primary-color);
     color: var(--text-dark);
+    border: none;
 }
 
-.btn-appointment {
+.hero-sidebar .social-icons a:hover {
+    background: #7F9B4F;
+    color: #FFFFFF;
+}
+
+.glass-sidebar .btn-appointment {
+    width: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 12px;
-    padding: 10px 20px;
-    background: var(--primary-color);
-    color: var(--text-dark);
-    font-weight: 700; /* Bolder as per reference */
+    padding: 15px 20px;
+    background: var(--text-dark);
+    color: #fff;
+    font-weight: 700;
     font-size: 13px;
     border-radius: 40px;
     transition: var(--transition);
     text-transform: uppercase;
     letter-spacing: 1px;
-    overflow: hidden;
 }
 
-.icon-arrow {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+.glass-sidebar .btn-appointment:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+.glass-sidebar .btn-appointment .icon-arrow {
     transition: var(--transition);
 }
 
-.btn-appointment:hover {
-    padding-right: 20px;
-    padding-left: 30px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+.glass-sidebar .btn-appointment:hover .icon-arrow {
+    transform: translateX(5px);
 }
 
-.btn-appointment:hover .icon-arrow {
-    transform: translateX(5px);
+/* Offset content on desktop */
+@media (min-width: 1025px) {
+    .hero-bottom-grid {
+        left: 245px !important; /* Sidebar 205px + 40px margin */
+    }
+    .scroll-down-arrow {
+        left: calc(50% + 102.5px) !important;
+    }
 }
 
 /* ========================================================
@@ -249,7 +281,7 @@ button {
 }
 
 .hotspot-tooltip i {
-    color: #ffd700; /* Subtle gold accent for icons */
+    color: #7F9B4F; /* Color corporativo solicitado */
 }
 
 /* For hotspots near the right edge to avoid extending out of screen bounds */
@@ -387,10 +419,28 @@ button {
     .info-cards {
         justify-content: center;
     }
-    .glass-navbar {
+    .hero-sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
         flex-direction: column;
-        gap: 20px;
-        border-radius: 20px;
+        padding: 30px 20px;
+        box-shadow: none;
+    }
+    .hero-sidebar .nav-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    .hero-sidebar .nav-links a {
+        width: auto;
+        padding: 8px 12px;
+        text-align: center;
+    }
+    .hero-sidebar .nav-actions {
+        align-items: center;
+        margin-top: 20px;
     }
     .hotspots-container {
         display: none; /* Hide on smaller screens to avoid clutter */
@@ -408,7 +458,7 @@ button {
     height: 120px; /* Reducido de 150 a 120 para que no tape tanto arriba */
     background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
     pointer-events: none;
-    z-index: 5;
+    z-index: 6; /* Por encima del sidebar para crear el efecto de desvanecimiento */
 }
 
 /* ========================================================

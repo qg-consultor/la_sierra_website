@@ -47,7 +47,12 @@ $(document).ready(function() {
         $('.hotspot').removeClass('active');
     });
 
-    // Herramienta temporal de coordenadas eliminada a petición.
+    // 3. Herramienta temporal de coordenadas (Loguea top/left en consola al hacer clic en Hero)
+    $('#hero').on('click', function(e) {
+        var x = (e.pageX / $(this).width() * 100).toFixed(1);
+        var y = (e.pageY / $(this).height() * 100).toFixed(1);
+        console.log("Coordenadas: top: " + y + "%; left: " + x + "%;");
+    });
     // 3. Prevent ripples from intercepting standard button clicks
     $('button, a').on('mouseenter', function() {
         // Optional: stop ripples when hovering over buttons to keep it clean,
