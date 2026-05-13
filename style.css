@@ -168,25 +168,27 @@ button {
     color: #FFFFFF;
 }
 
-.glass-sidebar .btn-appointment {
-    width: 100%;
+.hero-sidebar .btn-appointment {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 12px;
-    padding: 15px 20px;
-    background: var(--text-dark);
-    color: #fff;
+    background: rgba(255, 255, 255, 0.9); /* Fondo claro como los demás */
+    backdrop-filter: blur(4px);
+    color: var(--text-dark);
     font-weight: 700;
-    font-size: 13px;
-    border-radius: 40px;
+    border-radius: 50px; /* Bordes redondeados */
     transition: var(--transition);
     text-transform: uppercase;
-    letter-spacing: 1px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: none;
+    cursor: pointer;
 }
 
-.glass-sidebar .btn-appointment:hover {
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+.hero-sidebar .btn-appointment:hover {
+    background: #7F9B4F; /* Color corporativo al pasar el cursor */
+    color: #FFFFFF !important;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
     transform: translateY(-2px);
 }
 
