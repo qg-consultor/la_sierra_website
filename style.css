@@ -1063,7 +1063,7 @@ button {
 /* =========================================
    MASTER PLAN SECTION
 ========================================= */
-#master-plan { padding: 50px 5%; overflow: hidden; }
+#master-plan { padding: 50px 5%; overflow: hidden; background-color: #111; color: white; }
         #master-plan .mp-container { display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; gap: 50px; max-width: 1600px; width: 100%; padding: 20px 4%; align-items: center; justify-content: space-between; margin: 0 auto; }
         /* PANEL IZQUIERDO Y TARJETAS */
         #master-plan .stats-panel { flex: 0 0 350px !important; display: flex; flex-direction: column; gap: 20px; z-index: 10; }
