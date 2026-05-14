@@ -23,7 +23,7 @@ html {
 body {
     font-family: 'Mulish', sans-serif;
     color: var(--primary-color);
-    background-color: #000;
+    background-color: #ffffff;
     overflow-x: hidden;
     scroll-behavior: smooth; /* Añadido para navegación suave */
 }
@@ -45,7 +45,7 @@ button {
    ======================================================== */
 .hero {
     position: relative;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     min-height: 800px;
     overflow: hidden;
@@ -431,44 +431,278 @@ button {
 }
 
 /* ========================================================
-   Responsive Adjustments
+   Responsive Adjustments - Tablet (max-width: 1024px)
    ======================================================== */
 @media (max-width: 1024px) {
     .hero-bottom-grid {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto auto;
-        gap: 30px;
+        gap: 20px;
         text-align: center;
         justify-items: center;
+        bottom: 80px;
+        left: 20px;
+        right: 20px;
     }
     .info-cards {
         justify-content: center;
+        flex-direction: row;
+        align-items: center;
     }
     .hero-sidebar {
         width: 100%;
         height: auto;
         position: relative;
-        flex-direction: column;
-        padding: 30px 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 25px;
         box-shadow: none;
+        gap: 15px;
+        z-index: 10;
     }
     .hero-sidebar .nav-links {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 15px;
+        gap: 8px;
+        padding-top: 0;
+        width: auto;
     }
     .hero-sidebar .nav-links a {
         width: auto;
-        padding: 8px 12px;
+        padding: 8px 14px;
         text-align: center;
+        font-size: 13px;
     }
     .hero-sidebar .nav-actions {
         align-items: center;
-        margin-top: 20px;
+        margin-top: 0;
+    }
+    .nav-logo {
+        padding-left: 0;
+        margin-bottom: 0 !important;
+        justify-content: center;
+        width: auto;
+    }
+    .header-logo {
+        max-width: 70px !important;
+    }
+    .hero {
+        min-height: 100vh;
+        min-height: 100dvh; /* Dynamic viewport height for mobile browsers */
+    }
+    .tagline {
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+    .btn-main-cta {
+        padding: 14px 35px;
+        font-size: 13px;
+    }
+    .glass-card {
+        width: 140px;
+        padding: 15px;
+    }
+    .card-number {
+        font-size: 28px;
+    }
+    .card-desc {
+        font-size: 12px;
     }
     .hotspots-container {
         display: none; /* Hide on smaller screens to avoid clutter */
+    }
+    .hero-fade-bottom {
+        height: 80px;
+    }
+    .scroll-down-arrow {
+        left: 50% !important;
+        bottom: 30px;
+    }
+}
+
+/* ========================================================
+   Responsive Adjustments - Mobile (max-width: 768px)
+   ======================================================== */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 100vh;
+        min-height: 100dvh;
+    }
+    .hero-bg-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .hero-sidebar {
+        width: 100%;
+        padding: 15px 20px;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        background: rgba(255, 255, 255, 0.9);
+    }
+    .nav-logo {
+        justify-content: center;
+        width: auto;
+    }
+    .header-logo {
+        max-width: 60px !important;
+    }
+    .hero-sidebar .nav-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+        padding-top: 0;
+        width: 100%;
+    }
+    .hero-sidebar .nav-links a {
+        width: auto;
+        padding: 6px 10px;
+        font-size: 11px;
+        letter-spacing: 1px;
+        border-radius: 8px;
+    }
+    .hero-sidebar .social-icons {
+        width: auto;
+        height: auto;
+    }
+    .hero-sidebar .social-icons a {
+        width: 34px;
+        height: 34px;
+    }
+    .hero-bottom-grid {
+        bottom: 50px;
+        left: 15px;
+        right: 15px;
+        gap: 15px;
+    }
+    .tagline {
+        font-size: 15px;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+    }
+    .main-cta-container {
+        margin-bottom: 10px;
+    }
+    .btn-main-cta {
+        padding: 12px 28px;
+        font-size: 12px;
+        letter-spacing: 1.5px;
+    }
+    .info-cards {
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0;
+    }
+    .glass-card {
+        width: 120px;
+        padding: 12px;
+        border-radius: 10px;
+    }
+    .card-number {
+        font-size: 24px;
+    }
+    .card-desc {
+        font-size: 11px;
+    }
+    .hero-fade-bottom {
+        height: 60px;
+    }
+    .scroll-down-arrow {
+        bottom: 15px;
+        font-size: 18px;
+    }
+    /* Proyecto Section Mobile */
+    .proyecto-section {
+        padding: 30px 5% 60px 5%;
+    }
+    .proyecto-top-row {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .proyecto-main-title {
+        font-size: 36px !important;
+    }
+    .proyecto-sm-text {
+        font-size: 14px;
+    }
+    /* Master Plan Mobile */
+    #master-plan {
+        padding: 30px 3%;
+    }
+    #master-plan .mp-container {
+        flex-direction: column !important;
+        gap: 30px !important;
+        padding: 10px !important;
+    }
+    #master-plan .stats-panel {
+        flex: none !important;
+        width: 100% !important;
+    }
+    #master-plan .map-container {
+        width: 100% !important;
+        padding-top: 60px !important;
+    }
+    #master-plan .stats-panel h2 {
+        font-size: 1.5rem !important;
+    }
+    /* Prototipos Mobile */
+    .prototipos-section {
+        padding: 30px 4%;
+    }
+    .prototipos-header {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .prototipos-main-title {
+        font-size: 32px !important;
+    }
+    /* Ubicacion Mobile */
+    .ubicacion-section {
+        padding: 30px 4%;
+    }
+    .ubicacion-title {
+        font-size: 28px !important;
+    }
+    .ubicacion-content {
+        grid-template-columns: 1fr !important;
+    }
+    .place-row, .place-row.reverse {
+        flex-direction: column !important;
+    }
+    .place-img-wrapper {
+        width: 100% !important;
+    }
+    /* Contacto Mobile */
+    .contacto-section {
+        padding: 40px 5%;
+    }
+    .contacto-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .contacto-title {
+        font-size: 36px;
+    }
+    .contacto-desc {
+        font-size: 15px;
+    }
+    .contacto-form-glass {
+        padding: 30px 25px;
+    }
+    .contacto-right {
+        justify-content: center;
+    }
+    /* Button adjustments */
+    .btn-appointment {
+        padding: 12px 25px !important;
+        font-size: 12px !important;
     }
 }
 
@@ -1326,7 +1560,7 @@ button {
    ======================================================== */
 .contacto-section {
     position: relative;
-    width: 100vw;
+    width: 100%;
     padding: 70px 5%;
     background-image: url('SECCIONES/CONTACTO/IMAGENES/La Sierra 5.jpg');
     background-size: cover;
