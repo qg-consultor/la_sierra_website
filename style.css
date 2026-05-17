@@ -636,15 +636,20 @@ button {
     }
     .proyecto-right-img {
         order: 2; /* Video después del título */
-        width: 100%;
-        height: auto;
+        width: 100% !important;
+        height: auto !important;
         min-height: 220px;
-        border-radius: 16px; /* Bordes uniformes en móvil */
+        border-radius: 16px !important; /* Bordes uniformes en móvil */
+        box-shadow: 0 10px 25px rgba(0,0,0,0.08) !important;
+    }
+    .image-wrapper {
+        height: auto !important;
     }
     .main-project-image {
-        width: 100%;
-        height: auto;
+        width: 100% !important;
+        height: auto !important;
         min-height: 220px;
+        object-fit: cover;
     }
     .proyecto-main-title {
         font-size: 36px !important;
