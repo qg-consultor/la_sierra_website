@@ -26,10 +26,14 @@
   <section class="hero" id="hero">
 
     <!-- Hero Video Background -->
-    <video class="hero-bg-video"
-      src="https://res.cloudinary.com/dwkgoevjn/video/upload/v1778700432/La_Sierra_Timelapse_zmohqr.mp4" 
-      autoplay loop muted playsinline preload="auto"
-      poster="https://res.cloudinary.com/dwkgoevjn/video/upload/v1778700432/La_Sierra_Timelapse_zmohqr.jpg"></video>
+    <div class="hero-bg-video" style="overflow: hidden; pointer-events: none;">
+      <iframe
+        src="https://customer-pspcmgjur4m25f7o.cloudflarestream.com/9a4539240f26fd15330648b7d2418883/iframe?autoplay=true&muted=true&loop=true&controls=false&poster=https%3A%2F%2Fcustomer-pspcmgjur4m25f7o.cloudflarestream.com%2F9a4539240f26fd15330648b7d2418883%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600"
+        loading="lazy" title="Video Cloudflare Stream"
+        style="border: none; position: absolute; top: 50%; left: 50%; width: 100vw; height: 56.25vw; min-height: 100vh; min-width: 177.77vh; transform: translate(-50%, -50%);"
+        allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+        allowfullscreen></iframe>
+    </div>
 
     <!-- Navigation Sidebar (Exclusive to Hero Section) -->
     <aside class="hero-sidebar">
