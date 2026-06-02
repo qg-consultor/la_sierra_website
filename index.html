@@ -18,8 +18,8 @@
   <!-- jQuery and jquery.ripples for water distortion effect -->
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery.ripples@0.6.3/jquery.ripples.min.js"></script>
-  <!-- Cloudflare Stream Embed -->
-  <script data-cfasync="false" type="text/javascript" src="https://embed.cloudflarestream.com/embed/r4.js"></script>
+  <!-- HLS.js for Cloudflare Stream video playback -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 </head>
 
 <body>
@@ -28,9 +28,9 @@
   <section class="hero" id="hero">
 
     <!-- Hero Video Background -->
-    <stream
-      src="9a4539240f26fd15330648b7d2418883"
-      autoplay loop muted playsinline class="hero-bg-video"></stream>
+    <video class="hero-bg-video" id="heroVideo"
+      autoplay loop muted playsinline preload="auto"
+      poster="https://customer-pspcmgjur4m25f7o.cloudflarestream.com/9a4539240f26fd15330648b7d2418883/thumbnails/thumbnail.jpg?time=&height=600"></video>
 
     <!-- Navigation Sidebar (Exclusive to Hero Section) -->
     <aside class="hero-sidebar">
@@ -155,10 +155,8 @@
         <!-- Right Image Column -->
         <div class="proyecto-right-img">
           <div class="image-wrapper">
-
-            <stream
-              src="acabe2763a7ca30ee44ea8c9d3a09e21"
-              autoplay loop muted playsinline class="main-project-image"></stream>
+            <video id="proyectoVideo"
+              autoplay loop muted playsinline class="main-project-image"></video>
 
             <!-- Floating Tags like reference -->
             <div class="floating-tags">
@@ -2389,6 +2387,29 @@
 
   <!-- Custom JS -->
   <script src="script.js"></script>
+
+  <!-- HLS Video Initialization for Cloudflare Stream -->
+  <script>
+    (function () {
+      var videos = [
+        { id: 'heroVideo', src: 'https://customer-pspcmgjur4m25f7o.cloudflarestream.com/9a4539240f26fd15330648b7d2418883/manifest/video.m3u8' },
+        { id: 'proyectoVideo', src: 'https://customer-pspcmgjur4m25f7o.cloudflarestream.com/acabe2763a7ca30ee44ea8c9d3a09e21/manifest/video.m3u8' }
+      ];
+      videos.forEach(function (v) {
+        var video = document.getElementById(v.id);
+        if (!video) return;
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource(v.src);
+          hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED, function () { video.play(); });
+        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+          video.src = v.src;
+          video.addEventListener('loadedmetadata', function () { video.play(); });
+        }
+      });
+    })();
+  </script>
 </body>
 
 </html>
