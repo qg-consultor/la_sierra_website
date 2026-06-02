@@ -12,14 +12,7 @@
     href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Oswald:wght@300;400;500;600;700&family=Syncopate:wght@400;700&display=swap"
     rel="stylesheet">
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css">
-  <!-- FontAwesome for Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- jQuery and jquery.ripples for water distortion effect -->
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery.ripples@0.6.3/jquery.ripples.min.js"></script>
-  <!-- HLS.js for Cloudflare Stream video playback -->
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <link rel="stylesheet" href="style.css?v=1.6">
 </head>
 
 <body>
@@ -28,8 +21,7 @@
   <section class="hero" id="hero">
 
     <!-- Hero Video Background -->
-    <video class="hero-bg-video" id="heroVideo"
-      autoplay loop muted playsinline preload="auto"
+    <video class="hero-bg-video" id="heroVideo" autoplay loop muted playsinline preload="auto"
       poster="https://customer-pspcmgjur4m25f7o.cloudflarestream.com/9a4539240f26fd15330648b7d2418883/thumbnails/thumbnail.jpg?time=&height=600"></video>
 
     <!-- Navigation Sidebar (Exclusive to Hero Section) -->
@@ -155,8 +147,7 @@
         <!-- Right Image Column -->
         <div class="proyecto-right-img">
           <div class="image-wrapper">
-            <video id="proyectoVideo"
-              autoplay loop muted playsinline class="main-project-image"></video>
+            <video id="proyectoVideo" autoplay loop muted playsinline class="main-project-image"></video>
 
             <!-- Floating Tags like reference -->
             <div class="floating-tags">
@@ -2258,9 +2249,6 @@
         <div class="ubicacion-places">
           <!-- Row 1: Image Left, Text Right -->
           <div class="place-row">
-            <div class="place-img-wrapper">
-              <img src="SECCIONES/UBICACIÓN/IMAGENES/Colegios_Refugio.jpg" alt="Colegios" class="place-img">
-            </div>
             <div class="place-info">
               <i class="fa-solid fa-person-walking place-icon"></i>
               <div class="place-text">
@@ -2268,16 +2256,19 @@
                 <p>3 mins</p>
               </div>
             </div>
+            <div class="place-img-wrapper">
+              <img src="SECCIONES/UBICACIÓN/IMAGENES/Colegios_Refugio.jpg" alt="Colegios" class="place-img">
+            </div>
           </div>
 
           <!-- Row 2: Text Left, Image Right -->
           <div class="place-row reverse">
             <div class="place-info right-align">
+              <i class="fa-solid fa-car place-icon car-icon"></i>
               <div class="place-text">
                 <h4>Paseo Querétaro</h4>
                 <p>6 min</p>
               </div>
-              <i class="fa-solid fa-car place-icon car-icon"></i>
             </div>
             <div class="place-img-wrapper">
               <img src="SECCIONES/UBICACIÓN/IMAGENES/Paseo_Queretaro.jpg" alt="Paseo Querétaro" class="place-img">
@@ -2286,10 +2277,6 @@
 
           <!-- Row 3: Image Left, Text Right -->
           <div class="place-row">
-            <div class="place-img-wrapper large-img">
-              <img src="SECCIONES/UBICACIÓN/IMAGENES/Universidad_Anahuac_Queretaro.jpg" alt="Universidad Anáhuac"
-                class="place-img">
-            </div>
             <div class="place-info">
               <i class="fa-solid fa-person-walking place-icon"></i>
               <div class="place-text">
@@ -2297,16 +2284,20 @@
                 <p>6 min</p>
               </div>
             </div>
+            <div class="place-img-wrapper large-img">
+              <img src="SECCIONES/UBICACIÓN/IMAGENES/Universidad_Anahuac_Queretaro.jpg" alt="Universidad Anáhuac"
+                class="place-img">
+            </div>
           </div>
 
           <!-- Row 4: Text Left, Image Right -->
           <div class="place-row reverse">
             <div class="place-info right-align">
+              <i class="fa-solid fa-car place-icon car-icon"></i>
               <div class="place-text">
                 <h4>Aeropuerto Internacional</h4>
                 <p>25 min</p>
               </div>
-              <i class="fa-solid fa-car place-icon car-icon"></i>
             </div>
             <div class="place-img-wrapper">
               <img src="SECCIONES/UBICACIÓN/IMAGENES/Aeropuerto_Internacional_Queretaro.jpg"
@@ -2325,7 +2316,8 @@
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <!-- CTA Abrir en Google Maps -->
-            <a href="https://www.google.com/maps/dir/?api=1&destination=20.660156,-100.3446953" target="_blank" class="map-cta-btn">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=20.660156,-100.3446953" target="_blank"
+              class="map-cta-btn">
               <i class="fa-solid fa-location-dot"></i> Abrir en Google Maps
             </a>
           </div>
@@ -2389,6 +2381,14 @@
     </div>
   </section>
 
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- jQuery and jquery.ripples for water distortion effect -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery.ripples@0.6.3/jquery.ripples.min.js"></script>
+  <!-- HLS.js for Cloudflare Stream video playback -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
   <!-- Custom JS -->
   <script src="script.js"></script>
 
@@ -2403,13 +2403,11 @@
         var video = document.getElementById(v.id);
         if (!video) return;
         if (Hls.isSupported()) {
-          var hls = new Hls();
+          var hls = new Hls({ capLevelToPlayerSize: true });
           hls.loadSource(v.src);
           hls.attachMedia(video);
-          hls.on(Hls.Events.MANIFEST_PARSED, function () { video.play(); });
         } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
           video.src = v.src;
-          video.addEventListener('loadedmetadata', function () { video.play(); });
         }
       });
     })();

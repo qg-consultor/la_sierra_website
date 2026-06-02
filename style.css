@@ -750,6 +750,13 @@ button {
     .place-row, .place-row.reverse {
         flex-direction: column !important;
     }
+    .place-info.right-align {
+        flex-direction: row !important;
+        justify-content: flex-start !important;
+    }
+    .right-align .place-text {
+        text-align: left !important;
+    }
     .place-img-wrapper {
         width: 100% !important;
     }
@@ -767,8 +774,22 @@ button {
     .contacto-desc {
         font-size: 15px;
     }
+    .contacto-tags {
+        flex-wrap: nowrap !important;
+        gap: 10px !important;
+        justify-content: space-between !important;
+    }
+    .c-tag {
+        flex: 1;
+        padding: 9px 12px !important;
+        font-size: 11px !important;
+        text-align: center;
+        white-space: nowrap;
+    }
     .contacto-form-glass {
-        padding: 30px 25px;
+        padding: 30px 20px;
+        width: 100%;
+        max-width: 100%;
     }
     .contacto-right {
         justify-content: center;
@@ -1619,10 +1640,12 @@ button {
     align-items: center;
     gap: 25px;
     width: 100%;
-    justify-content: flex-start;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
 }
 
 .place-row.reverse {
+    flex-direction: row;
     justify-content: flex-end;
 }
 
@@ -1912,6 +1935,37 @@ button {
     }
     .contacto-title {
         font-size: 48px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contacto-title {
+        font-size: 32px !important; /* Force smaller title to prevent overflow */
+        word-wrap: break-word;
+    }
+    .contacto-desc {
+        font-size: 15px;
+    }
+    .contacto-tags {
+        flex-wrap: nowrap !important;
+        gap: 10px !important;
+        justify-content: center !important;
+    }
+    .c-tag {
+        flex: 1;
+        padding: 9px 12px !important;
+        font-size: 11px !important;
+        text-align: center;
+        white-space: nowrap;
+    }
+    .contacto-form-glass {
+        padding: 30px 15px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    .contacto-section {
+        padding: 40px 15px !important; /* Reduce side padding to give form more room */
     }
 }
 
