@@ -1921,7 +1921,7 @@ button {
     bottom: 25px;
     left: 50%;
     transform: translateX(-50%);
-    background: #3D5A40; /* Dark green from screenshot */
+    background: #1E1E1E;
     color: #ffffff !important;
     padding: 12px 24px;
     border-radius: 30px;
