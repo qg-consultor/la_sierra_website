@@ -706,6 +706,9 @@ button {
         order: 1 !important;
         width: 100% !important;
     }
+    #master-plan .stats-panel h2 {
+        text-align: center !important;
+    }
     #master-plan .map-instruction {
         position: relative !important;
         top: auto !important;
