@@ -1,19 +1,17 @@
 // --- PAGE LOADER ---
 (function () {
-  window.addEventListener('load', function () {
-    const loader = document.getElementById('pageLoader');
-    if (!loader) return;
+  const loader = document.getElementById('pageLoader');
+  if (!loader) return;
 
-    function dismissLoader() {
-      loader.classList.add('hidden');
-      loader.addEventListener('transitionend', function () {
-        loader.remove();
-      }, { once: true });
-    }
+  function dismissLoader() {
+    loader.classList.add('hidden');
+    loader.addEventListener('transitionend', function () {
+      loader.remove();
+    }, { once: true });
+  }
 
-    // Espera exacta de 2.5s para que se aprecie el efecto visual
-    setTimeout(dismissLoader, 2500);
-  });
+  // Espera exacta de 2.5s para que se aprecie el efecto visual
+  setTimeout(dismissLoader, 2500);
 })();
 
 
