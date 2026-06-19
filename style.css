@@ -7,7 +7,7 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: #fdfbf7; /* Tono crema neutro del hero */
+    background-color: #0b0f15; /* Fondo oscuro DRT */
     z-index: 9999;
     display: flex;
     justify-content: center;
@@ -35,19 +35,19 @@
 .page-loader .box:nth-child(2) {
     width: 100%;
     height: 100%;
-    border-top-color: #bfa571; /* Accent gold from text-gold */
+    border-top-color: #0056b3; /* Azul DRT */
     animation: spin1 2s linear infinite;
 }
 .page-loader .box:nth-child(3) {
     width: 80%;
     height: 80%;
-    border-right-color: #7F9B4F; /* Corporate Green */
+    border-right-color: #ffffff; /* Blanco */
     animation: spin2 2.5s linear infinite;
 }
 .page-loader .box:nth-child(4) {
     width: 60%;
     height: 60%;
-    border-bottom-color: #111111; /* Dark text color */
+    border-bottom-color: #0088ff; /* Azul claro DRT */
     animation: spin1 3s linear infinite;
 }
 .page-loader .logo {
