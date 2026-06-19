@@ -1,3 +1,33 @@
+// --- PAGE LOADER ---
+(function () {
+  window.addEventListener('load', function () {
+    const loader = document.getElementById('pageLoader');
+    if (!loader) return;
+    
+    function dismissLoader() {
+      loader.classList.add('hidden');
+      loader.addEventListener('transitionend', function () {
+        loader.remove();
+      }, { once: true });
+    }
+    
+    // Espera mínima de 2.5s para que se vea la marca
+    const minWait = 2500;
+    const startTime = performance.now();
+    
+    function tryDismiss() {
+      const elapsed = performance.now() - startTime;
+      const remaining = minWait - elapsed;
+      if (remaining <= 0) {
+        dismissLoader();
+      } else {
+        setTimeout(dismissLoader, remaining);
+      }
+    }
+    tryDismiss();
+  });
+})();
+
 $(document).ready(function() {
     
     // 1. Water Ripple Effect Disabled
