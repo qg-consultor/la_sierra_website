@@ -78,7 +78,7 @@
     height: auto;
     display: block;
     object-fit: contain;
-    filter: brightness(0) invert(1);
+    /* Sin filtro: el logo ya es blanco con fondo transparente */
 }
 /* Ripple animation */
 @keyframes drt-ripple {
