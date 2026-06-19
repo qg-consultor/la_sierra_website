@@ -7,7 +7,7 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: #0b0f15; /* Fondo oscuro DRT */
+    background-color: #011022; /* Fondo oscuro marino */
     z-index: 9999;
     display: flex;
     justify-content: center;
@@ -20,8 +20,8 @@
 }
 .page-loader .loader {
     position: relative;
-    width: 180px;
-    height: 180px;
+    width: 320px;
+    height: 320px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,30 +29,46 @@
 .page-loader .box {
     position: absolute;
     border-radius: 50%;
-    border: 2px solid transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Efecto 3D de la imagen */
+    box-shadow: inset 0 2px 4px rgba(255,255,255,0.08), 0 15px 30px rgba(0,0,0,0.6);
 }
-/* Outer rings animations */
-.page-loader .box:nth-child(2) {
-    width: 100%;
-    height: 100%;
-    border-top-color: #0056b3; /* Azul DRT */
-    animation: spin1 2s linear infinite;
+
+/* Anillos como círculos sólidos concéntricos */
+.page-loader .box:nth-child(4) { /* Círculo más grande (afuera) */
+    width: 280px;
+    height: 280px;
+    background-color: #021731;
+    z-index: 1;
+    animation: pulseCircle 4s ease-in-out infinite;
 }
-.page-loader .box:nth-child(3) {
-    width: 80%;
-    height: 80%;
-    border-right-color: #ffffff; /* Blanco */
-    animation: spin2 2.5s linear infinite;
+.page-loader .box:nth-child(3) { /* Círculo medio */
+    width: 210px;
+    height: 210px;
+    background-color: #032145;
+    z-index: 2;
+    animation: pulseCircle 4s ease-in-out infinite 0.5s;
 }
-.page-loader .box:nth-child(4) {
-    width: 60%;
-    height: 60%;
-    border-bottom-color: #0088ff; /* Azul claro DRT */
-    animation: spin1 3s linear infinite;
+.page-loader .box:nth-child(2) { /* Círculo más chico (adentro) */
+    width: 140px;
+    height: 140px;
+    background-color: #042a58;
+    z-index: 3;
+    animation: pulseCircle 4s ease-in-out infinite 1s;
 }
+.page-loader .box:nth-child(1) { /* Contenedor del Logo */
+    width: 140px;
+    height: 140px;
+    z-index: 4;
+    background: transparent;
+    box-shadow: none; /* Quitamos la sombra al contenedor del logo */
+}
+
 .page-loader .logo {
     position: absolute;
-    width: 120px;
+    width: 100px; /* Ajuste del logo para que encaje bien en el círculo de 140px */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,21 +77,13 @@
 .page-loader .loader-logo-img {
     width: 100%;
     height: auto;
-    animation: pulse 2s ease-in-out infinite;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3)); /* Sombra al logo blanco para que resalte */
 }
 
-@keyframes spin1 {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-@keyframes spin2 {
-    0% { transform: rotate(360deg); }
-    100% { transform: rotate(0deg); }
-}
-@keyframes pulse {
-    0% { transform: scale(0.9); opacity: 0.8; }
-    50% { transform: scale(1.05); opacity: 1; }
-    100% { transform: scale(0.9); opacity: 0.8; }
+@keyframes pulseCircle {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
 }
 
 /* ========================================================
